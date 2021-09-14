@@ -11,14 +11,48 @@ export const Container = styled.div`
     }
 
     .articles {
-        background-color: #f8f8f8;
-        padding: 50px;
         display: flex;
-        min-height: 100vh;
+        background-color: #247BA0;
         flex-direction: column;
 
-        svg { 
-            margin-left: 10px;
+        .articles-holder {
+            display: flex;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+
+            @media (max-width: 560px) {
+                flex-direction: column;
+
+                > div:not(:first-child){ 
+                    margin-top: 50px;
+                }
+            }
+            
+            @media (min-width: 560px) {
+                flex-direction: row;
+
+                > div:not(:first-child){ 
+                    margin-left: 50px;
+                }
+            }
+        }
+
+        .load-more {
+            display: flex;
+            background: white;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            padding: 10px 50px;
+            font-weight: bold;
+            color: gray;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            cursor: pointer;
+            
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 

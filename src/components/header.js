@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    background: white;
+    background: #13293D;
 
     .title {
-        font-size: 400%;
+        font-size: 3.3rem;
         text-align: center;
         margin: auto;
-        padding: 30px 30px 0px 0px;
-        border-bottom: 6px solid black;
-        width: 40%;
+        padding: 30px 0px 0px 0px;
+        border-bottom: 6px solid #0a1c2b;
+        max-width: 500px;
+        width: 80vw;
+        color: white;
     }
     
     .page-header {
@@ -24,7 +26,6 @@ const Container = styled.div`
     
         a { 
             text-align: center;
-            background: #f8f8f8;
             border-radius: 5px;
             flex: 1;
             min-height: 40px;
@@ -35,7 +36,7 @@ const Container = styled.div`
                 transition: opacity 0.2s;
             } 
 
-            color: black;
+            color: white;
             text-decoration: none;
             text-align: center;
             display: block;
@@ -44,17 +45,10 @@ const Container = styled.div`
         }
 
         .selected-route {
-            color: #ff1053ff;
+            color: #ff4277;
         }
     }
 `;
-
-/* CSS HEX 
---red-crayola: #ff1053ff;
---dark-blue-gray: #6c6ea0ff;
---vivid-sky-blue: #66c7f4ff;
---beau-blue: #c1cad6ff;
---white: #ffffffff;*/
 
 export const Header = () => {
     const path = window.location.pathname;
@@ -64,7 +58,7 @@ export const Header = () => {
             <h1 className="title">Nelson Kenmochi</h1>
             <header className="page-header">
                 <Link to='/' className={path === '/' && 'selected-route'}>Home</Link>
-                <Link to='/aboutme' className={path === '/aboutme' && 'selected-route'}>About Me</Link>
+                <Link to='/aboutme' className={path === '/aboutme' && 'selected-route'}>About</Link>
                 <Link to='/projects' className={path === '/projects' && 'selected-route'}>Projects</Link>
                 <Link to='/' className={path === '/others' && 'selected-route'}>Others</Link>
             </header>
